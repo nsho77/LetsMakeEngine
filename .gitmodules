@@ -1,3 +1,6 @@
 [submodule "LetsMakeEngine/vendor/spdlog"]
 	path = LetsMakeEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Hazel/vendor/GLFW"]
+	path = Hazel/vendor/GLFW
+	url = https://github.com/nsho77/glfw
