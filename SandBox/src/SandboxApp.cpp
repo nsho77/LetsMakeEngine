@@ -185,7 +185,6 @@ public:
 	{
 		m_CameraController.OnEvent(e);
 	}
-
 private:
 	Hazel::ShaderLibrary m_ShaderLibrary;
 	Hazel::Ref<Hazel::Shader> m_Shader;
