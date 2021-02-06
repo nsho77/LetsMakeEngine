@@ -151,7 +151,7 @@ public:
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
 		std::dynamic_pointer_cast<Hazel::OpenGLShader>(m_FlatColorShader)->Bind();
-		std::dynamic_pointer_cast<Hazel::OpenGLShader>(m_FlatColorShader)->UploadeUniformFloat3("u_Color", m_SquareColor);
+		std::dynamic_pointer_cast<Hazel::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
 
 		for (int y = 0; y < 20; y++)
 		{

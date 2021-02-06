@@ -175,6 +175,21 @@ namespace Hazel {
 		glUseProgram(0);
 	}
 
+	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
+	{
+		UploadUniformFloat3(name, value);
+	}
+
+	void OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
+	{
+		UploadUniformFloat4(name, value);
+	}
+
+	void OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value)
+	{
+		UploadUniformMat4(name, value);
+	}
+
 	void OpenGLShader::UploadeUniformInt(const std::string& name, const int value)
 	{
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
@@ -193,13 +208,13 @@ namespace Hazel {
 		glUniform2f(location, values.x, values.y);
 	}
 
-	void OpenGLShader::UploadeUniformFloat3(const std::string& name, const glm::vec3& values)
+	void OpenGLShader::UploadUniformFloat3(const std::string& name, const glm::vec3& values)
 	{
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniform3f(location, values.x, values.y, values.z);
 	}
 
-	void OpenGLShader::UploadeUniformFloat4(const std::string& name, const glm::vec4& values)
+	void OpenGLShader::UploadUniformFloat4(const std::string& name, const glm::vec4& values)
 	{
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniform4f(location, values.x, values.y, values.z, values.w);
@@ -211,7 +226,7 @@ namespace Hazel {
 		glUniformMatrix3fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
 	}
 
-	void OpenGLShader::UploadeUniformMat4(const std::string& name, const glm::mat4& matrix)
+	void OpenGLShader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
 	{
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
