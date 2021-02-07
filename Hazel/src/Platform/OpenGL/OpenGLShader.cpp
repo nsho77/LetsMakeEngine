@@ -175,6 +175,11 @@ namespace Hazel {
 		glUseProgram(0);
 	}
 
+	void OpenGLShader::SetInt(const std::string& name, int value)
+	{
+		UploadUniformInt(name, value);
+	}
+
 	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
 	{
 		UploadUniformFloat3(name, value);
@@ -190,7 +195,7 @@ namespace Hazel {
 		UploadUniformMat4(name, value);
 	}
 
-	void OpenGLShader::UploadeUniformInt(const std::string& name, const int value)
+	void OpenGLShader::UploadUniformInt(const std::string& name, const int value)
 	{
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniform1i(location, value);
