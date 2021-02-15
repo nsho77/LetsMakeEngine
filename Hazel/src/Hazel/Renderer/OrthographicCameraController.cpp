@@ -2,7 +2,7 @@
 #include "Hazel/Renderer/OrthographicCameraController.h"
 
 #include "Hazel/Core/Input.h"
-#include "Hazel/Core/KeyCode.h"
+#include "Hazel/Core/KeyCodes.h"
 
 namespace Hazel {
 
